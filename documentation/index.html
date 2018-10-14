@@ -12,19 +12,39 @@
 <body ng-app='basicApp' ng-controller='mainController'>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <!--sections goes here-->
+            <!--ng-click-->
             <div class="panel panel-primary">
-                <div class="panel-heading"><h2>ng-click</h2></div>
+                <div class="panel-heading"><h3>ng-click</h3></div>
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <h3>ng-click <input type="button" class="btn btn-danger" value="click me" ng-click="showAlert('ng-click')"></h3> 
-                            gets triggered when the mouse clicks object                            
+                    <form>
+                        <div class="col-md-6 col-md-offset-1 form-group">
+                            <p>It gets triggered when the mouse clicks object</p>
+                            <input type="button" class="btn btn-danger" value="click me" ng-click="showAlert('ng-click')"/>                                                        
                         </div>
-                    </div>
+                    </form>
                 </div>                
             </div>
-        </div>
+
+            <!--ng-change-->
+            <div class="panel panel-primary">
+                    <div class="panel-heading"><h3>ng-change</h3></div>
+                    <div class="container">
+                        <form>
+                            <div class="col-md-6 col-md-offset-1 mb-1 form-group">
+                                <p>It gets triggered when the dropdown or input field is changed. It also works
+                                    on chackboxes and radio buttons
+                                </p>  
+                                <select ng-model='valueToStore' ng-change="showAlert('ng-change')" class="form-control margin-botton:1" name="Change one option">
+                                    <option value="1">value 1</option>
+                                    <option value="2">value 2</option>
+                                    <option value="3">value 3</option>
+                                    <option value="4">value 4</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>                
+                </div>
+        </div>            
     </div>
 
     <script>
