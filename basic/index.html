@@ -16,25 +16,35 @@
             <div>{{user.name}} - {{user.surname}}</div>     
         </div>
 
-        <div ng-controller='controllerBottom'>
+        <div ng-controller='controllerMiddle'>
             {{user.name}} - {{user.surname}}
         </div>
+
+        <div ng-controller='controllerBottom'>
+                {{newUser.name}} - {{newUser.surname}}
+            </div>
     </div>
     <script>
-        app.controller('controllerTop', function($scope){
-            $scope.user = {
+        app.controller('controllerTop', function($rootScope, $scope){
+            $rootScope.user = {
                 name: 'Washington',
                 surname: 'Souza'
             }            
         });
 
-        app.controller('controllerBottom', function($scope){
+        app.controller('controllerMiddle', function($scope){
             var user = {
                 name: 'Fulano',
                 surname: 'Costa'
             };
+        });
 
-            $scope.user = user;
+        app.controller('controllerBottom', function($scope){
+            var newUser = {
+                name: 'Fulano',
+                surname: 'Costa'
+            };
+            $scope.newUser = newUser;
         });
     </script>
 </body>
