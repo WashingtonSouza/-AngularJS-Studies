@@ -10,10 +10,28 @@
         <script src="./app/index.js"></script>
     </head>
 <body ng-app='basicApp' ng-controller='mainController'>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <!--sections goes here-->
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h2>ng-click</h2></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3>ng-click <input type="button" class="btn btn-danger" value="click me" ng-click="showAlert('ng-click')"></h3> 
+                            gets triggered when the mouse clicks object                            
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
 
     <script>
         app.controller('mainController', function($scope){
-
+            $scope.showAlert = function(origin){
+                alert('This alert was triggered by ' + origin);
+            }
         });  
     </script>
 </body>
