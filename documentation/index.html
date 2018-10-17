@@ -12,6 +12,7 @@
 <body ng-app='basicApp' ng-controller='mainController'>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+
             <!--ng-click-->
             <div class="panel panel-primary">
                 <div class="panel-heading"><h3>ng-click</h3></div>
@@ -27,23 +28,47 @@
 
             <!--ng-change-->
             <div class="panel panel-primary">
-                    <div class="panel-heading"><h3>ng-change</h3></div>
-                    <div class="container">
-                        <form>
-                            <div class="col-md-6 col-md-offset-1 mb-1 form-group">
-                                <p>It gets triggered when the dropdown or input field is changed. It also works
-                                    on chackboxes and radio buttons
-                                </p>  
-                                <select ng-model='valueToStore' ng-change="showAlert('ng-change')" class="form-control margin-botton:1" name="Change one option">
-                                    <option value="1">value 1</option>
-                                    <option value="2">value 2</option>
-                                    <option value="3">value 3</option>
-                                    <option value="4">value 4</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>                
-                </div>
+                <div class="panel-heading"><h3>ng-change</h3></div>
+                <div class="container">
+                    <form>
+                        <div class="col-md-6 col-md-offset-1 mb-1 form-group">
+                            <p>It gets triggered when the dropdown or input field is changed. It also works
+                                on chackboxes and radio buttons
+                            </p>  
+                            <select ng-model='valueToStore' ng-change="showAlert('ng-change')" class="form-control margin-botton:1" name="Change one option">
+                                <option value="1">value 1</option>
+                                <option value="2">value 2</option>
+                                <option value="3">value 3</option>
+                                <option value="4">value 4</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>                
+            </div>
+
+            <!--ng-change-->
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h3>ng-focus</h3></div>
+                <div class="container">
+                    <form>
+                        <div class="col-md-6 col-md-offset-1 mb-1 form-group">
+                            <p>It gets triggered when any element get focused using tab key or click</p>  
+                            <p>{{focusObj.dropdown}}</p>
+                            <select class="form-control margin-botton:1" name="Change one option" ng-focus="markFocused('dropdown')">
+                                <option value="1">value 1</option>
+                                <option value="2">value 2</option>
+                                <option value="3">value 3</option>
+                                <option value="4">value 4</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6 col-md-offset-1 mb-1">
+                            {{focusObj.input}}
+                        <input type="text" class="form-control" ng-focus="markFocused('input')"/>
+                        </div>                        
+                    </form>
+                </div>                
+            </div>
         </div>            
     </div>
 
@@ -52,6 +77,15 @@
             $scope.showAlert = function(origin){
                 alert('This alert was triggered by ' + origin);
             }
+
+            $scope.focusObj = {
+                dropdown: "not focused",
+                input: "not focused"
+            };
+
+            $scope.markFocused = function(obj){
+              $scope.focusObj[obj] = "object focused";  
+            };
         });  
     </script>
 </body>
