@@ -91,7 +91,21 @@
                     </form>
                 </div>                
             </div>
-        </div>            
+
+            <!--ng-copy-->
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h3>ng-copy</h3></div>
+                <div class="container">
+                    <form>
+                        <div class="col-md-6 col-md-offset-1 mb-1 form-group">
+                            <p>It gets triggered when the user tries copy the text using right click or CTRL + C</p>  
+                            <input type="text" class="form-control" ng-copy="showAlert('ng-copy')"/>
+                        </div>                     
+                    </form>
+                </div>                
+            </div>            
+            
+        </div>          
     </div>
 
     <script>
