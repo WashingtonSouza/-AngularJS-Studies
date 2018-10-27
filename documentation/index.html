@@ -46,7 +46,7 @@
                 </div>                
             </div>
 
-            <!--ng-change-->
+            <!--ng-focus-->
             <div class="panel panel-primary">
                 <div class="panel-heading"><h3>ng-focus</h3></div>
                 <div class="container">
@@ -130,6 +130,22 @@
                     </form>
                 </div>                
             </div> 
+
+            <!--ng-doble-click-->
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h3>ng-dblclick</h3></div>
+                <div class="container">
+                    <form>
+                        <div class="col-md-6 col-md-offset-1 form-group">
+                            <p>It gets triggered when the user double click the left button of the mouse on the object</p>
+                            <input type="button" class="btn btn-danger" value="double click me" ng-dblclick="showAlert('ng-dblclick')"/>                                                        
+                        </div>
+                        <div class="col-md-6 col-md-offset-1 form-group">
+                            <input type="text" class="form-control" value="double click me" ng-dblclick="showAlert('ng-dblclick')"/>                                                        
+                        </div>
+                    </form>
+                </div>                
+            </div>
         </div>          
     </div>
 
