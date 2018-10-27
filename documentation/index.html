@@ -146,11 +146,44 @@
                     </form>
                 </div>                
             </div>
+
+            <!--keyborad events-->
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h3>keyborad Events ng-keydown, ng-keypress, ng-keyup</h3></div>
+                <div class="container">
+                    <form>
+                        <div class="col-md-6 col-md-offset-1 mb-1 form-group">
+                            <p>Keyborad events are basically triggered when the keys are pressed or released</p>  
+                            <ul>
+                                <li><h4>ng-keydown</h4> is triggered when the keys is pressed it is on the down position</li>
+                                <li><h4>ng-keypress</h4> is triggered when the key is pressed. It does not recognise CTRL, ALT nor SHIFT</li>
+                                <li><h4>ng-keyup</h4> is triggered when the key is release</li>
+                            </ul>
+                            {{keyBoardPosition}}
+
+                            <input type="text"
+                                   class="form-control"
+                                   ng-keydown = "keyBoardPosition = 'key down'"
+                                   ng-keyup = "keyBoardPosition = 'key up'"/>
+                            <br>
+
+                            {{keyPressEvent}}
+                            <input type="text" 
+                                   class="form-control" ng-keypress="keyPressEvent = 'key pressed'"
+                                   ng-keyup = "keyPressEvent = 'key up'"/>                            
+                        </div>                     
+                    </form>
+                </div>                
+            </div>  
         </div>          
     </div>
 
     <script>
         app.controller('mainController', function($scope){
+            
+            $scope.keyBoardPosition ="nothing happened yet";
+            $scope.keyPressEvent ="nothing happened yet";
+
             $scope.showAlert = function(origin){
                 alert('This alert was triggered by ' + origin);
             }
